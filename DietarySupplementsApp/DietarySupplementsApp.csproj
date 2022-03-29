@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B492610C-B823-4DA6-843A-9F42752144EA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DietarySupplementsApp</RootNamespace>
+    <AssemblyName>DietarySupplementsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DietarySupplementsDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DietarySupplementsDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DietarySupplementsDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DietarySupplementsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DietarySupplementsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DietarySupplementsDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>DietarySupplementsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersList.Designer.cs">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>DietarySupplementsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsList.Designer.cs">
+      <DependentUpon>ProductsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRequest.Designer.cs">
+      <DependentUpon>AddRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request.cs">
+      <DependentUpon>DietarySupplementsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestsList.Designer.cs">
+      <DependentUpon>RequestsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>DietarySupplementsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="WelcomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeWindow.Designer.cs">
+      <DependentUpon>WelcomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signin.Designer.cs">
+      <DependentUpon>Signin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersList.resx">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsList.resx">
+      <DependentUpon>ProductsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRequest.resx">
+      <DependentUpon>AddRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestsList.resx">
+      <DependentUpon>RequestsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeWindow.resx">
+      <DependentUpon>WelcomeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Signin.resx">
+      <DependentUpon>Signin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DietarySupplementsDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DietarySupplementsDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DietarySupplementsDB.edmx.diagram">
+      <DependentUpon>DietarySupplementsDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DietarySupplementsDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DietarySupplementsDB.Context.cs</LastGenOutput>
+      <DependentUpon>DietarySupplementsDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="DietarySupplementsDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DietarySupplementsDB.edmx</DependentUpon>
+      <LastGenOutput>DietarySupplementsDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="images\Dietary-Supplements-image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
